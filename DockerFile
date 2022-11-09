@@ -1,0 +1,7 @@
+FROM openjdk:17
+VOLUME /tmp
+ARG DEPENDENCY=target/dependency
+COPY ${OEPENDENCY}/BO0T-INF/lib /app/1ib
+COPY ${OEPENDENCY}/META-INF /app/META-INF
+COPY ${DEPENDENCY}/BOOT-INF/classes /app
+ENTRYPOINT ["java","-cp", "app:app/lib/*", "br.com.lucasbarroscode.aws_project.AwsProjectApplication"]
