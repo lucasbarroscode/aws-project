@@ -45,7 +45,7 @@ task unpack(type:Copy){
 docker {
 	name "${project.group}/${bootJar.baseName}"
 	tags "${bootJar.version}"
-	copySpec.from(tasks.unpack.outputs).into("depencency")
+	copySpec.from(tasks.unpack.outputs).into("dependency")
 	buildArgs(['DEPENDENCY' : "dependency"])
 }
 
